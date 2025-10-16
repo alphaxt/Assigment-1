@@ -1,13 +1,16 @@
+// header file included
 #include "student.h"
 
+// default constructor using scope resolution operator :: as it is outside the class
 student::student()
 {
     name = "ahmed";
     age = 19;
     rollNum = "l1f2445";
-    gpa = 3.5;
+    gpa = 3.8;
 }
 
+// parameterized constructor takes parameters
 student::student(string n, int a, string r, float c)
 {
     name = n;
@@ -16,10 +19,7 @@ student::student(string n, int a, string r, float c)
     gpa = c;
 }
 
-student::~student(){
-    cout<< "An object of student class is destroyed." << endl;
-}
-
+// setter and getter functions because data members are private
 void student::setName(string n)
 {
     name = n;
@@ -36,6 +36,7 @@ void student::setgpa(float c)
 {
     gpa = c;
 }
+
 
 string student::getName()
 {
@@ -54,30 +55,39 @@ float student::getgpa()
     return gpa;
 }
 
+// display function to display student information
 void student::displayInfo() {
     cout << " ---------------------------- \n";
-    cout << " Student Information \n";
 
     cout << "Name: " << name << " | Age: " << age << " | Roll No: " << rollNum
-    << " | GPA: " << gpa << endl;
+        << " | GPA: " << gpa << endl;
 }
 
+// grade display function
 void student::displayGrade() {
 
     char grade;
 
     if (gpa >= 3.7) {
         grade = 'A';
-    } else if (gpa >= 3.0) {
+    }
+    else if (gpa >= 3.0) {
         grade = 'B';
-    } else if (gpa >= 2.0) {
+    }
+    else if (gpa >= 2.0) {
         grade = 'C';
-    } else if (gpa >= 1.0) {
+    }
+    else if (gpa >= 1.0) {
         grade = 'D';
-    } else {
+    }
+    else {
         grade = 'F';
     }
 
     cout << "Grade: " << grade << endl;
-    cout << " ---------------------------- \n";
+}
+
+// destructor to free the memory
+student::~student() {
+    cout << "An object of student class is destroyed." << name << endl;
 }

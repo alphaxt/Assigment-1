@@ -1,6 +1,6 @@
 # Assignment 1 — Student class (C++)
 
-A small C++ exercise that demonstrates a simple `student` class with
+A C++ exercise assignment that demonstrates a simple `student` class with
 constructors, getters/setters, a destructor, and methods to display
 information and a grade based on GPA.
 
